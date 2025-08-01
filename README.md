@@ -15,6 +15,6 @@ The project is split into three parts:
 - `frontend/`: A browser-based interface for interacting with the flashcard system
 - `a3.html`: A web page for API documentation of usable routes
 
----
+## License
 
-*This project is intended for academic use only and is not configured for public deployment or reuse.*
+This project is for academic and demonstration purposes only. It is not licensed for reuse or distribution.
