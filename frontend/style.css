@@ -1,0 +1,17 @@
+.card-inner {
+    transform-style: preserve-3d;
+    transition: transform 0.8s;
+    position: relative;
+}
+
+.card-front, .card-back {
+    backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+
+.flipped {
+    transform: rotateY(180deg);
+}

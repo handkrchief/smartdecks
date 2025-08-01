@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SmartDecks API Documentation</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+  <div class="container py-5">
+    <h1 class="text-center mb-5">SmartDecks API Documentation</h1>
+
+    <!-- USERS API -->
+    <div class="card mb-5 p-4 shadow-sm">
+      <h3>User Management API</h3>
+      <p><strong>Runs on:</strong> <code>index.js</code> (Start with <code>npm run dev</code>)</p>
+
+      <!-- GET all users -->
+      <div class="mt-4 p-3 bg-light border rounded">
+        <h5>Get All Users</h5>
+        <p><strong>Method:</strong> GET</p>
+        <p><strong>Endpoint:</strong> <code>/users</code></p>
+        <pre><code>[
+            { "userId": 1, "username": "testuser", "email": "test@gmail.com" }
+        ]</code></pre>
+      </div>
+
+      <!-- GET user -->
+      <div class="mt-4 p-3 bg-light border rounded">
+        <h5>Get User by ID</h5>
+        <p><strong>Method:</strong> GET</p>
+        <p><strong>Endpoint:</strong> <code>/users/:userId</code></p>
+        <pre><code>{
+            "userId": 1,
+            "username": "testuser",
+            "email": "testuser@gmail.com"
+        }</code></pre>
+      </div>
+
+      <!-- POST user -->
+      <div class="mt-4 p-3 bg-light border rounded">
+        <h5>Create a New User</h5>
+        <p><strong>Method:</strong> POST</p>
+        <p><strong>Endpoint:</strong> <code>/users</code></p>
+        <p><strong>Content-Type:</strong> <code>application/json</code></p>
+        <p><strong>Request Body:</strong></p>
+        <pre><code>{ "username": "newuser", "email": "new@example.com" }</code></pre>
+        <p><strong>Success:</strong> 201 Created</p>
+        <pre><code>{ "Success": "User created successfully.", "userId": 3 }</code></pre>
+      </div>
+    </div>
+
+    <!-- DECKS API -->
+    <div class="card mb-5 p-4 shadow-sm">
+      <h3>Deck Management API</h3>
+
+      <!-- GET user decks -->
+      <div class="mt-4 p-3 bg-light border rounded">
+        <h5>List Decks for User</h5>
+        <p><strong>Method:</strong> GET</p>
+        <p><strong>Endpoint:</strong> <code>/users/:userId/decks</code></p>
+      </div>
+
+      <!-- POST new deck -->
+      <div class="mt-4 p-3 bg-light border rounded">
+        <h5>Create Deck for User</h5>
+        <p><strong>Method:</strong> POST</p>
+        <p><strong>Endpoint:</strong> <code>/users/:userId/decks</code></p>
+        <p><strong>Request Body:</strong></p>
+        <pre><code>{ "name": "Sample Deck", "subject": "Math" }</code></pre>
+      </div>
+
+      <!-- GET specific deck -->
+      <div class="mt-4 p-3 bg-light border rounded">
+        <h5>Get Deck by ID</h5>
+        <p><strong>Method:</strong> GET</p>
+        <p><strong>Endpoint:</strong> <code>/decks/:deckId</code></p>
+      </div>
+
+      <!-- PUT deck update -->
+      <div class="mt-4 p-3 bg-light border rounded">
+        <h5>Update Deck</h5>
+        <p><strong>Method:</strong> PUT</p>
+        <p><strong>Endpoint:</strong> <code>/decks/:deckId</code></p>
+        <p><strong>Request Body:</strong></p>
+        <pre><code>{ "name": "Updated Deck", "subject": "Science" }</code></pre>
+      </div>
+
+      <!-- DELETE deck -->
+      <div class="mt-4 p-3 bg-light border rounded">
+        <h5>Delete Deck</h5>
+        <p><strong>Method:</strong> DELETE</p>
+        <p><strong>Endpoint:</strong> <code>/decks/:deckId</code></p>
+      </div>
+    </div>
+
+    <!-- CARDS API -->
+    <div class="card mb-5 p-4 shadow-sm">
+      <h3>Flashcard Management API</h3>
+
+      <!-- GET cards -->
+      <div class="mt-4 p-3 bg-light border rounded">
+        <h5>List Cards in Deck</h5>
+        <p><strong>Method:</strong> GET</p>
+        <p><strong>Endpoint:</strong> <code>/decks/:deckId/cards</code></p>
+      </div>
+
+      <!-- POST card -->
+      <div class="mt-4 p-3 bg-light border rounded">
+        <h5>Create Card</h5>
+        <p><strong>Method:</strong> POST</p>
+        <p><strong>Endpoint:</strong> <code>/decks/:deckId/cards</code></p>
+        <p><strong>Request Body:</strong></p>
+        <pre><code>{ "question": "What is 2+2?", "answer": "4" }</code></pre>
+      </div>
+
+      <!-- PUT card -->
+      <div class="mt-4 p-3 bg-light border rounded">
+        <h5>Update Card</h5>
+        <p><strong>Method:</strong> PUT</p>
+        <p><strong>Endpoint:</strong> <code>/cards/:cardId</code></p>
+        <p><strong>Request Body:</strong></p>
+        <pre><code>{ "question": "Updated question", "answer": "Updated answer" }</code></pre>
+      </div>
+
+      <!-- DELETE card -->
+      <div class="mt-4 p-3 bg-light border rounded">
+        <h5>Delete Card</h5>
+        <p><strong>Method:</strong> DELETE</p>
+        <p><strong>Endpoint:</strong> <code>/cards/:cardId</code></p>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
